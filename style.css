@@ -1,0 +1,457 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 1rem;
+    padding: 2rem;
+    /* animation-name: example;
+    animation-duration: 5s;
+    animation-iteration-count: infinite; */
+}
+
+/* CSS for Accordion Example */
+
+.head h4 {
+    background: radial-gradient(rgb(5, 2, 3), rgb(23, 238, 23));
+    border-left-style: solid;
+    width: auto;
+    font-weight: 900;
+    color: #000000;
+    padding: 2rem 1rem;
+    cursor: pointer;
+    align-items: center;
+}
+
+.cont p {
+    background: radial-gradient(rgb(255, 255, 255), rgb(0, 0, 0));
+    width: auto;
+    font-weight: 900;
+    color: #000000;
+    padding: 2rem 1rem;
+    cursor: pointer;
+    align-items: center;
+}
+
+/* CSS for Radio Button */
+
+.toggle-button-cover {
+    display: table-cell;
+    position: relative;
+    width: 200px;
+    height: 140px;
+    box-sizing: border-box;
+}
+
+.button-cover {
+    height: 100px;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px -8px #c5d6d6;
+    border-radius: 4px;
+}
+
+.button-cover:before {
+    counter-increment: button-counter;
+    content: counter(button-counter);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #d7e3e3;
+    font-size: 12px;
+    line-height: 1;
+    padding: 5px;
+}
+
+.button-cover,
+.knobs,
+.layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.button {
+    position: relative;
+    top: 50%;
+    width: 74px;
+    height: 36px;
+    margin: -20px auto 0 auto;
+    overflow: hidden;
+}
+
+.checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.knobs {
+    z-index: 2;
+}
+
+.layer {
+    width: 100%;
+    background-color: #ebf7fc;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+.button.r,
+.button.r .layer {
+    border-radius: 100px;
+}
+
+#button-3 .knobs:before {
+    content: "YES";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 10px;
+    color: black;
+    font-size: 10px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    background-color: #06ff01;
+    border-radius: 50%;
+    transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+}
+
+#button-3 .checkbox:active+.knobs:before {
+    width: 46px;
+    border-radius: 100px;
+}
+
+#button-3 .checkbox:checked:active+.knobs:before {
+    margin-left: -26px;
+}
+
+#button-3 .checkbox:checked+.knobs:before {
+    content: "NO";
+    left: 42px;
+    font-weight: 900;
+    color: white;
+    background-color: #e6645b;
+}
+
+#button-3 .checkbox:checked~.layer {
+    background-color: #fcebeb;
+}
+
+#contain {
+    display: block;
+    font-size: 2rem;
+    font-weight: 900;
+    margin: auto;
+    border-radius: 2rem 2rem;
+    padding: 3rem;
+    box-shadow: 2rem 4rem 5rem black;
+    background: linear-gradient(to bottom right, rgb(222, 222, 228), rgb(36, 84, 230));
+}
+
+#nav {
+    padding: 4rem;
+    font-weight: 900;
+    font-size: 1.5rem;
+    border-radius: 20rem;
+    margin: 1rem;
+    box-shadow: 2rem 4rem 6rem black;
+    background: fixed;
+    background: linear-gradient(black, aqua);
+    /* animation-name: example; 
+    animation-duration: 5s;
+    animation-iteration-count: infinite; */
+}
+
+#form1 {
+    padding: 4rem;
+    font-weight: 900;
+    font-size: 1.5rem;
+    border-radius: 20rem;
+    margin: 1rem;
+    box-shadow: 2rem 4rem 6rem black;
+    background: linear-gradient(to bottom right, rgb(225, 93, 139), rgb(188, 172, 172));
+}
+
+#form2 {
+    padding: 4rem;
+    font-weight: 900;
+    font-size: 1.5rem;
+    border-radius: 20rem;
+    margin: 1rem;
+    box-shadow: 2rem 4rem 6rem black;
+    background: linear-gradient(to bottom right, rgb(84, 4, 163), rgb(189, 170, 170));
+}
+
+#form3 {
+    padding: 4rem;
+    font-weight: 900;
+    font-size: 1.5rem;
+    border-radius: 20rem;
+    margin: 1rem;
+    box-shadow: 2rem 4rem 6rem black;
+    background: linear-gradient(to bottom right, rgb(159, 196, 9), rgb(191, 172, 172));
+}
+
+#form4 {
+    display: flex;
+    padding: 4rem;
+    font-weight: 900;
+    font-size: 1.5rem;
+    border-radius: 20rem;
+    margin: 1rem;
+    box-shadow: 2rem 4rem 6rem black;
+    background: linear-gradient(to bottom right, rgb(238, 93, 3), rgb(187, 168, 168));
+}
+
+.sub {
+    width: 7rem;
+    height: 3rem;
+    color: white;
+    font-weight: 900;
+    margin: auto;
+    background-color: green;
+}
+
+.sub:hover {
+    background-color: blue;
+}
+
+.res {
+    width: 7rem;
+    height: 3rem;
+    color: white;
+    font-weight: 900;
+    margin: auto;
+    background-color: green;
+}
+
+.res:hover {
+    background-color: blue;
+}
+
+
+.form__group {
+    position: relative;
+    padding: 20px 0 0;
+    width: 100%;
+    max-width: 180px;
+}
+
+.form__field {
+    font-family: inherit;
+    width: auto;
+    border: none;
+    border-bottom: 2px solid #040000;
+    outline: 0;
+    font-size: 17px;
+    color: #000000;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+    color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+    font-size: 17px;
+    cursor: text;
+    top: 20px;
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 2rem;
+    color: rgb(20, 42, 234);
+    pointer-events: none;
+}
+
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 900;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #ffffff, #2bce06);
+    border-image-slice: 1;
+}
+
+.form__field:focus~.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1.5rem;
+    color: #bc5d13;
+    font-weight: 900;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+    box-shadow: none;
+}
+
+
+/* CSS for Arrays Example */
+
+.cards {
+    display: flex;
+    position: relative;
+    gap: 20rem;
+    padding: 2rem;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 900;
+    border-radius: 2rem 2rem;
+    background-color: grey;
+    box-shadow: 2rem 4rem 6rem rgb(0, 0, 0);
+    /* animation-name: example;
+    animation-duration: 5s;
+    animation-iteration-count: infinite; */
+    -webkit-box-reflect: below 3rem;
+
+}
+
+.cards .red {
+    background: radial-gradient(black, #e6052a, black);
+}
+
+.cards .green {
+    background: radial-gradient(black, #056011, black);
+}
+
+.cards .blue {
+    background: radial-gradient(black, #3b22c5, black);
+}
+
+.cards .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50rem;
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.cards .card p.tip {
+    font-size: 1em;
+    font-weight: 900;
+}
+
+.cards .card p.second-text {
+    font-size: .7em;
+}
+
+.cards .card:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.cards:hover>.card:not(:hover) {
+    filter: blur(20px);
+    transform: scale(0.7, 0.7);
+}
+
+.card h3 {
+    display: block;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+#object {
+    display: block;
+    font-size: 1rem;
+    font-weight: 900;
+    margin: 2rem;
+    border: .1rem solid black;
+    border-radius: 2rem 2rem;
+    padding: 1rem;
+    width: 50%;
+    box-shadow: 2rem 2rem 3rem black;
+}
+
+#arrayOfObject {
+    display: block;
+    font-size: 1rem;
+    font-weight: 900;
+    margin: 2rem;
+    border: .1rem solid black;
+    border-radius: 2rem 2rem;
+    padding: 1rem;
+    width: 50%;
+    box-shadow: 2rem 2rem 3rem rgb(0, 0, 0);
+}
+
+#array {
+    display: block;
+    font-size: 1rem;
+    font-weight: 900;
+    margin: 2rem;
+    border: .1rem solid black;
+    border-radius: 2rem 2rem;
+    padding: 1rem;
+    width: 50%;
+    box-shadow: 2rem 2rem 3rem black;
+}
+
+div select {
+    margin-top: 2rem;
+    width: 12rem;
+    height: 2rem;
+    text-align: left;
+    padding: .2rem;
+    font-weight: 900;
+    border-style: hidden;
+    color: black;
+    border-radius: 2rem;
+    background-color: rgb(255, 255, 255);
+}
+
+div select:hover {
+    background-color: rgb(8, 111, 125);
+}
+
+@keyframes example {
+    0% {
+        background: linear-gradient(rgb(0, 0, 0), rgb(1, 247, 22), rgb(0, 0, 0));
+    }
+
+    25% {
+        background: linear-gradient(rgb(0, 0, 0), rgb(1, 54, 247), rgb(1, 1, 2));
+    }
+
+    50% {
+        background: linear-gradient(rgb(0, 0, 0), rgb(218, 1, 247), rgb(0, 0, 0));
+    }
+
+    75% {
+        background: linear-gradient(rgb(0, 0, 0), rgb(247, 132, 1), rgb(0, 0, 0));
+    }
+
+    100% {
+        background: linear-gradient(rgb(0, 0, 0), rgb(247, 1, 1), rgb(0, 0, 0));
+    }
+}

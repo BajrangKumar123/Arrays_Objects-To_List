@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array & Array of Objects</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous">
+        </script>
+</head>
+
+<body>
+    <div class="cards">
+        <div class="card red">
+            <h1 class="tih1">Objects</h1>
+            <select name="objects" class="second-text" id="obj">
+                <option value="Select Options below">Select any Option</option>
+            </select>
+            <h3 id="arr1"></h3>
+        </div>
+        <div class="card green">
+            <h1 class="tip">Array Of Objects</h1>
+            <select name="arraOfObject" class="second-text" id="arrofObj">
+                <option value="Select Options below">Select any Option</option>
+            </select>
+            <h3 id="arr2"></h3>
+        </div>
+        <div class="card blue">
+            <h1 class="tip">Arrays</h1>
+            <select name="array" class="second-text" id="arr">
+                <option value="Select Options below">Select any Option</option>
+            </select>
+            <h3 id="arr3"></h3>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function () {
+
+        //....Objects.......\\
+        var object = {
+            "name1": "Ashwi", "name2": "Bajrang", "name3": "Ashish", "name4": "Vishal", "name5": "Sweta", "name6": "Raman"
+        };
+        var i = 0;
+        $.each(object, function (key, value) {                                //.....Enter the objects elements in the dropdown menu......
+            $('#obj').append(`<option value="` + key + ` : ` + value + `">` + value + `</option>`);
+            i++;
+        });
+
+
+        $('#obj').change(function () {                                 //.....Get the selected value from Dropdown menu....
+            var selectedValue = $(this).children(`option:selected`).val();
+            $('#arr1').text(`You have selected : ` + selectedValue);
+        });
+
+
+
+        //....Array Of Objects.......\\
+        var arrOfObject = [
+            { item: "Bike", year: "2025" },
+            { item: "Car", year: "2026" },
+            { item: "House", year: "2028" },
+            { item: "Auto", year: "2030" },
+            { item: "Building", year: "2032" },
+            { item: "Bicycle", year: "2035" }
+        ];
+        var j = 0;
+        $.each(arrOfObject, function (key, value) {                        //....Enter the array of Objects elements in the dropdown menu.....
+            $('#arrofObj').append(`<option value="` + key + ' : ' + value.item + ` : ` + value.year + `">` + value.item + " : " + value.year + `</option`);
+            j++;
+        });
+
+        $('#arrofObj').change(function () {                                   //......Get the selected value from Dropdown menu......
+            var selectedOption = $(this).children(`option:selected`).val();
+            $('#arr2').text(`You have selected : ` + selectedOption);
+        });
+
+
+
+
+        //....Arrays.......\\
+        var array = ["Burger", "Chowmin", "Momoz", "EggRoll", "Ice-Cream", "Coffee"];
+        
+        $.each(array, function (key, value) {
+            $('#arr').append(`<option value="` + key + ` : ` + value + `">` + array[key] + `</option>`);
+        });
+
+
+        $('#arr').change(function () {
+            var selectedChoice = $(this).children(`option:selected`).val();
+            $('#arr3').text(`You have selected : ` + selectedChoice);
+        });
+
+    });
+</script>
+
+</html>
